@@ -43,13 +43,26 @@ namespace KorotkovaWeb.Controllers
         }
 
         [HttpGet("Pushkin")]
-          public async Task<ActionResult<IEnumerable<Book>>>getPushkin()
+          public async Task<ActionResult<IEnumerable<Book>>>GetPushkin()
            {
           return _context.GetPushkinBooks(_context.Books).ToList();
           }
 
         // PUT: api/Books/5
-   
+
+        [HttpGet("{id}/count")]
+        public async Task<ActionResult<int>> GetAuthors(long id)
+        {
+            var book = await _context.authors.FindAsync(id);
+
+            if (book == null)
+            {
+                return NotFound();
+            }
+
+            return book.getAuthors();
+        }
+
         [HttpPut("{id}")]
         public async Task<IActionResult> PutBook(long id, Book book)
         {

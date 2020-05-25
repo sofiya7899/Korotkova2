@@ -17,21 +17,14 @@ namespace KorotkovaWeb.Models
         public DbSet<Book> Books { get; set; }
         public DbSet<Authors> authors { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            //настраиваем связь один ко многим
-            modelBuilder.Entity<Book>()
-            .HasOne(p => p.Author)
-            .WithMany(b => b.Book)
-            .HasForeignKey(p => p.IdAuthor);
-        }
+      
 
 
         public DbSet<KorotkovaWeb.Models.Authors> Authors { get; set; }
 
        public IEnumerable<Book> GetPushkinBooks(IEnumerable<Book> books)
       {
-            return books.Where(p => p.Authorr == 111);
+            return books.Where(p => p.Author == "Pushkin");
        }
        
     }

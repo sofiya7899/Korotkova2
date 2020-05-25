@@ -10,10 +10,11 @@ namespace KorotkovaWeb.Models
         public long id { get; set; }
         public string Authorr { get; set; }
         public string country { get; set; }
-        public List<Book> Book { get; set; }
-        public Authors()
+        public ICollection<Book> authors { get; set; }
+
+        public int getAuthors()
         {
-            Book = new List<Book>();
+            return authors.Count;
         }
 
     }

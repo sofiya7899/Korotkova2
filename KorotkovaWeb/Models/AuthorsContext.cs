@@ -15,7 +15,13 @@ namespace KorotkovaWeb.Models
        
         public DbSet<Authors> authors { get; set; }
 
-       
-       
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Authors>()
+                .OwnsMany(property => property.authors);
+        }
+
+
+
     }
 }
