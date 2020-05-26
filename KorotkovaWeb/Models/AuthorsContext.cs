@@ -18,9 +18,13 @@ namespace KorotkovaWeb.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Authors>()
-                .OwnsMany(property => property.authors);
+                .OwnsMany(property => property.books);
         }
 
+        public IEnumerable<Authors> GetPushkinBooks(IEnumerable<Authors> authors)
+        {
+            return authors.Where(p => p.NameAuthor == "Pushkin");
+        }
 
 
     }

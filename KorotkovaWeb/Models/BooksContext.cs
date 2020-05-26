@@ -22,10 +22,7 @@ namespace KorotkovaWeb.Models
 
         public DbSet<KorotkovaWeb.Models.Authors> Authors { get; set; }
 
-       public IEnumerable<Book> GetPushkinBooks(IEnumerable<Book> books)
-      {
-            return books.Where(p => p.Author == "Pushkin");
-       }
+     
        
     }
 }

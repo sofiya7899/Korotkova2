@@ -8,13 +8,13 @@ namespace KorotkovaWeb.Models
     public class Authors
     {
         public long id { get; set; }
-        public string Authorr { get; set; }
+        public string NameAuthor { get; set; }
         public string country { get; set; }
-        public ICollection<Book> authors { get; set; }
+        public ICollection<Book> books { get; set; }
 
-        public int getAuthors()
+        public int getBooks()
         {
-            return authors.Count;
+            return books.Count;
         }
 
     }
