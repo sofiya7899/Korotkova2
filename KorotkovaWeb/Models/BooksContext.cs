@@ -15,14 +15,10 @@ namespace KorotkovaWeb.Models
         }
 
         public DbSet<Book> Books { get; set; }
-        public DbSet<Authors> authors { get; set; }
-
-      
-
+           
 
         public DbSet<KorotkovaWeb.Models.Authors> Authors { get; set; }
-
-     
+             
        
     }
 }

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using KorotkovaWeb.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace KorotkovaWeb.Controllers
 {
@@ -103,6 +104,8 @@ namespace KorotkovaWeb.Controllers
 
         // DELETE: api/Authors/5
         [HttpDelete("{id}")]
+        
+
         public async Task<ActionResult<Authors>> DeleteAuthors(long id)
         {
             var authors = await _context.authors.FindAsync(id);
