@@ -12,9 +12,9 @@ namespace KorotkovaWeb.Controllers
     [ApiController]
     public class AuthorsController : ControllerBase
     {
-        private readonly AuthorsContext _context;
+        private readonly BooksContext _context;
 
-        public AuthorsController(AuthorsContext context)
+        public AuthorsController(BooksContext context)
         {
             _context = context;
         }

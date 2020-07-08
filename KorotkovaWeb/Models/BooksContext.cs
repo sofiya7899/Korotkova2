@@ -20,5 +20,23 @@ namespace KorotkovaWeb.Models
         public DbSet<KorotkovaWeb.Models.Authors> Authors { get; set; }
              
        
+    
+   
+  
+
+        public DbSet<Authors> authors { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Authors>()
+                .OwnsMany(property => property.books);
+        }
+
+        public IEnumerable<Authors> GetPushkinBooks(IEnumerable<Authors> authors)
+        {
+            return authors.Where(p => p.NameAuthor == "Pushkin");
+        }
+
+
     }
 }

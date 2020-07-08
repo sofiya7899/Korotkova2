@@ -28,8 +28,7 @@ namespace KorotkovaWeb
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AuthorsContext>(opt =>
-               opt.UseInMemoryDatabase("AuthorsList"));
+           
             services.AddDbContext<BooksContext>(opt =>
               opt.UseInMemoryDatabase("BooksList"));
             services.AddControllers();
